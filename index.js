@@ -19,27 +19,23 @@ const month = [
     "September",
     "October",
     "November",
-    "Ddecember",
+    "December",
 ]
 monthEl.innerText = month[monthInx];
 fullDateEl.innerText = new Date().toDateString();
 
 let days = "";
 
-for(let i = firstDay; i>0;i--){
+for (let i = 0; i < firstDay; i++) {
     days += `<div class="empty"></div>`;
-}
-for (let i = 1 ; i <= lastDay ; i++){
-    if(i === new Date().getDate()) {
-        days +=`<div class="today">${i}</div>`;
-    }else{
-
+  }
+  
+  for (let i = 1; i <= lastDay; i++) {
+    if (i === new Date().getDate()) {
+      days += `<div class="today">${i}</div>`;
+    } else {
+      days += `<div>${i}</div>`;
     }
-    days += `<div>${i}</div>`;
-}
+  }
+  
 DaysEl.innerHTML = days;
-
-
-
-
-
